@@ -1,7 +1,9 @@
 ## New Version Getting Core Object
+
 local QBCore = exports['qb-core']:GetCoreObject()
 
 ## Common Functions
+
 esx:onPlayerDeath -> hospital:server:SetDeathStatus
 esx:playerLoaded -> QBCore:Client:OnPlayerLoaded (use for setting a variable to let the script know the player is ready)
 esx:showAdvancedNotification -> QBCore:Notify
@@ -46,6 +48,7 @@ ESX.Trace -> Use QBCore.Debug but dont bother converting this
 ESX.UseItem -> QBCore.Functions.UseItem
 
 ## Player Functions
+
 xPlayer.removeWeaponComponent -> xPlayer.Functions.RemoveItem (component name, amount)
 xPlayer.setAccountMoney -> xPlayer.Functions.SetMoney (account, amount)
 xPlayer.setCoords -> None (used for teleporting)
@@ -61,6 +64,7 @@ xPlayer.triggerEvent -> None (dont bother)
 xPlayer.updateCoords -> None (dont bother)
 
 ## Events
+
 esx:getSharedObject -> QBCore:GetObject
 esx:setJob -> QBCore:Client:OnJobUpdate
 esx:onPlayerSpawn -> QBCore:Client:OnPlayerLoaded
@@ -70,6 +74,7 @@ esx:removeInventoryItem -> QBCore:Server:RemoveItem
 esx:useItem -> QBCore:Server:UseItem
 
 ## DB Ops with Oxmysql
+
 MySQL.Async.fetchScalar() -> exports.oxmysql:scalar(query, {params}, cb)
 MySQL.Async.fetchAll() -> exports.oxmysql:execute(query, {params}, cb)
 MySQL.Async.execute() -> exports.oxmysql:execute(query, {params}, cb)
