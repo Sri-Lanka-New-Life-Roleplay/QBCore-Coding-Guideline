@@ -1,0 +1,15 @@
+- Send Notification from serverside
+TriggerClientEvent('QBCore:Notify', src, 'All your possessions have been taken..', 'error')
+
+- Showing Add or remove inventory items
+TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['bandage'], "add")
+TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['bandage'], "remove")
+
+- Adding Black SetMoney
+
+local data = {
+        worth = math.random(Config.MoneyMin, Config.MoneyMax)
+    }
+
+xPlayer.Functions.AddItem('markedbills', 1, false, data)
+TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["markedbills"], 'add')

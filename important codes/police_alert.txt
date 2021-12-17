@@ -1,0 +1,49 @@
+Using qb-policealert
+
+Add this to client side
+
+function AlertPolice(coords)
+    if QBCore.Functions.GetPlayerData().job.name == "police" then
+        local store = "Train Heist"
+
+            PlaySound(-1, "Lose_1st", "GTAO_FM_Events_Soundset", 0, 0, 1)
+            TriggerEvent('qb-policealerts:client:AddPoliceAlert', {
+                timeOut = 10000,
+                alertTitle = "Train Robbery Attempt",
+                coords = {
+                    x = coords.x,
+                    y = coords.y,
+                    z = coords.z,
+                },
+                details = {
+                    [1] = {
+                        icon = '<i class="fas fa-globe-europe"></i>',
+                        detail = "Train with full of Uranium Cells in attack",
+                    }
+                },
+                callSign = QBCore.Functions.GetPlayerData().metadata["callsign"],
+            })
+
+        local transG = 250
+        local blip = AddBlipForCoord(coords.x, coords.y, coords.z)
+        SetBlipSprite(blip, 795)
+        SetBlipColour(blip, 49)
+        SetBlipDisplay(blip, 4)
+        SetBlipAlpha(blip, transG)
+        SetBlipScale(blip, 1.2)
+        SetBlipFlashes(blip, true)
+        BeginTextCommandSetBlipName('STRING')
+        AddTextComponentString("10-90: Train Robbery")
+        EndTextCommandSetBlipName(blip)
+        while transG ~= 0 do
+            Wait(180 * 4)
+            transG = transG - 1
+            SetBlipAlpha(blip, transG)
+            if transG == 0 then
+                SetBlipSprite(blip, 2)
+                RemoveBlip(blip)
+                return
+            end
+        end
+    end
+end

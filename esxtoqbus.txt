@@ -62,6 +62,9 @@ xPlayer.showHelpNotification -> TriggerClientEvent('QBCore:Notify')
 xPlayer.showNotification -> TriggerClientEvent('QBCore:Notify')
 xPlayer.triggerEvent -> None (dont bother)
 xPlayer.updateCoords -> None (dont bother)
+player.addInventoryItem -> player.Functions.AddItem
+player.getInventoryItem -> player.Functions.GetItemByName -> count -> amount, title -> name
+player.removeInventoryItem -> player.Functions.RemoveItem
 
 ## Events
 
