@@ -65,6 +65,7 @@ xPlayer.updateCoords -> None (dont bother)
 player.addInventoryItem -> player.Functions.AddItem
 player.getInventoryItem -> player.Functions.GetItemByName -> count -> amount, title -> name
 player.removeInventoryItem -> player.Functions.RemoveItem
+player.addMoney -> player.Functions.AddMoney(type, amount)
 
 ## Events
 

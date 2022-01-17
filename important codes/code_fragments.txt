@@ -13,3 +13,11 @@ local data = {
 
 xPlayer.Functions.AddItem('markedbills', 1, false, data)
 TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["markedbills"], 'add')
+
+- Set Fuel to vehicles with Legazy Fuel
+
+exports['LegacyFuel']:SetFuel(veh, 100.0)
+
+- Set vehicle keys to owner
+
+TriggerEvent("vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(veh))
